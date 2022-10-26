@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
-import { Wrapper, Item, OnlineLabel, Avatar, Title } from './Friends.styled';
+import { FriendListItem } from './FriendLirstItem';
+import { Wrapper } from './Friends.styled';
 
 export const Friends = ({ data }) => {
-  const renderList = () =>
-    data.map(({ id, isOnline, name, avatar }) => (
-      <Wrapper key={id}>
-        <Item>
-          <OnlineLabel isOnline={isOnline} />
-          <Avatar src={avatar} alt={name} />
-          <Title>{name}</Title>
-        </Item>
-      </Wrapper>
-    ));
-
-  return renderList();
+  return (
+    <Wrapper>
+      {data.map(({ id, isOnline, name, avatar }) => (
+        <FriendListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+        />
+      ))}
+    </Wrapper>
+  );
 };
 
 Friends.propTypes = {

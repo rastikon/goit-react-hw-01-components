@@ -5,13 +5,13 @@ export const Wrapper = styled.ul`
   flex-direction: column;
   width: 300px;
   padding: 0px;
-  margin: 5px;
 `;
 
 export const Item = styled.li`
   display: flex;
   align-items: center;
   padding: 8px;
+  margin: 5px;
   border: 1px solid #557b83;
   border-radius: 10px;
   cursor: pointer;
